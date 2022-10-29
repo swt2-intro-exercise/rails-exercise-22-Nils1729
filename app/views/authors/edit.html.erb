@@ -1,5 +1,20 @@
 <h1>Edit <%= @author.name %></h1>
-<%= form_with scope: :author, url: authors_path, local: true do |form| %>
+<%= form_with model: @author, local: true do |form| %>
+
+  <% if @author.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@author.errors.count, "error") %> prohibited
+        this author from being saved:
+      </h2>
+      <ul>
+        <% @author.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
   <p>
     <%= form.label :first_name %><br>
     <%= form.text_field :first_name %>
@@ -18,11 +33,4 @@
   <p>
     <%= form.submit %>
   </p>
-<% end %>
-
-<% if @author.errors.any? %>
-  <h2>Errors</h2>
-  <% @author.errors.full_messages.each do |message|%>
-    <p><%= message %></p>
-  <% end %>
 <% end %>

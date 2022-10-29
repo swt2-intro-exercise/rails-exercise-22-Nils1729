@@ -20,6 +20,16 @@ class AuthorsController < ApplicationController
     def edit
         @author = Author.find params[:id]
     end
+
+    def update
+        @author = Author.find params[:id]
+
+        if @author.update(author_params)
+            redirect_to root_path, notice: 'Success!'
+        else
+            render 'edit'
+        end
+    end
     
     def index
         @authors = Author.all
