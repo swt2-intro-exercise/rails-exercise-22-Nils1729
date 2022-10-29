@@ -17,7 +17,7 @@ describe "Index author page", type: :feature do
 
     it "should link to authors detail pages" do
         visit authors_path
-        expect(page).to have_link "Details", href: author_path(@alan)
+        expect(page).to have_link "Show", href: author_path(@alan)
     end
 
     it "should link to 'new_author_path'" do
