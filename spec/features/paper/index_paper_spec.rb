@@ -10,4 +10,10 @@ describe "Index paper page", type: :feature do
         visit papers_path
         expect(page).to have_link "Edit", href: edit_paper_path(@example_paper)
     end
+
+
+    it "should have a link to delete an author" do
+        visit papers_path
+        expect(page).to have_link "Destroy"
+    end
 end
