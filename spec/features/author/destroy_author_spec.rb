@@ -6,7 +6,7 @@ describe "Destroy author action", type: :feature do
     end
 
     it "should destroy the author" do
-        visit author_path
+        visit authors_path
 
         prev_authors = Author.count
 

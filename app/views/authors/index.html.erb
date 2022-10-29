@@ -7,6 +7,7 @@
     <th>Homepage</th>
     <th></th>
     <th></th>
+    <th></th>
   </tr>
   <% @authors.each do |author| %>
     <tr>
@@ -14,6 +15,7 @@
         <th><%= author.homepage %></th>
         <th><%= link_to "Show", author_path(author) %></th>
         <th><%= link_to "Edit", edit_author_path(author) %></th>
+        <th><%= link_to "Destroy", author_path(author), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"}%></th>
     </tr>
   <% end %>
 </table>
