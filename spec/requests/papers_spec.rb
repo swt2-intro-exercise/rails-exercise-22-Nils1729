@@ -31,12 +31,6 @@ RSpec.describe "/papers", type: :request do
       get papers_url
       expect(response).to be_successful
     end
-
-    it "should link to the paper's edit page" do
-      paper = Paper.create! valid_attributes
-      get papers_url
-      expect(response).to have_link "Edit", href: edit_paper_path(paper)
-    end
   end
 
   describe "GET /show" do
