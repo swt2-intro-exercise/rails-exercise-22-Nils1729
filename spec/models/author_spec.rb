@@ -17,4 +17,12 @@ RSpec.describe Author, type: :model do
   it "should have a method `name` which returns the full name of an author" do
     expect(@author.name).to eq('Alan Turing')
   end
+
+
+  it "should not save an empty last_name" do
+    @author.last_name = ""
+    @author.save
+
+    expect(@author).to_not be_valid
+  end
 end
