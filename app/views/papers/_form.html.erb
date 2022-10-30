@@ -27,7 +27,7 @@
   </div>
 
   <div>
-    <%= form.label :authors, style: "display: block" %>
+    <%= form.label 'author_ids', style: "display: block" %>
     <%= form.select 'author_ids',
       options_from_collection_for_select(Author.all, :id, :name, paper.author_ids),
       {},

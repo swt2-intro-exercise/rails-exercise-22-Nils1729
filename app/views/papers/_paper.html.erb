@@ -17,7 +17,7 @@
     Authors
   </h3>
   <% paper.authors.each do |author| %>
-    <%= link_to(author.name, authors_path(author)) %>
+    <%= link_to(author.name, author_path(author)) %>
   <% end %>
 
 </div>
