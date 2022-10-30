@@ -6,7 +6,7 @@ describe "Show paper page", type: :feature do
     end
 
     it "should show the author's full names" do
-        visit papers_path
+        visit papers_path(@example_paper)
         expect(page).to have_text "Alan Turing"
     end
 end
