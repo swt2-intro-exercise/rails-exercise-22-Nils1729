@@ -24,4 +24,8 @@ RSpec.describe Paper, type: :model do
     @paper.year = "today"
     expect(@paper).to_not be_valid
   end
+
+  it "should have an empty list of authors" do
+    expect(@paper.authors).to be_empty 
+  end
 end

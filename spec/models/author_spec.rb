@@ -25,4 +25,8 @@ RSpec.describe Author, type: :model do
 
     expect(@author).to_not be_valid
   end
+
+  it "should have an empty list of papers" do
+    expect(@author.papers).to be_empty 
+  end
 end
